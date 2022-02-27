@@ -19,5 +19,8 @@
     position: relative;
     width: 500px;
     height: 500px;
+
+    -webkit-box-shadow: 5px 5px 15px 5px #7D7D7D; 
+box-shadow: 5px 5px 15px 5px #7D7D7D;
   }
 </style>
