@@ -1,14 +1,24 @@
 <script lang="ts">
-    import { game } from '../stores';
+  import { tweened } from "svelte/motion";
+  import { cubicOut } from "svelte/easing";
+  import { game } from "../stores";
+  export let flipped: boolean;
 
-    export let flipped: boolean;
-
-  //if flipped, show player2's selector
-  $: position = flipped ? $game.player2Cursor : $game.player1Cursor
-  
+  $: cursorX = flipped ? $game.player2Cursor.x : $game.player1Cursor.x;
+  $: cursorY = flipped ? $game.player2Cursor.y : $game.player1Cursor.y;
+  const animatedX = tweened(cursorX, {
+    duration: 200,
+    easing: cubicOut,
+  });
+  const animatedY = tweened(cursorY, {
+    duration: 200,
+    easing: cubicOut,
+  });
+  $: animatedX.set(cursorX);
+  $: animatedY.set(cursorY);
 </script>
 
-<div style="top:{position.y * 12.5}%; left: {position.x * 12.5}%"> </div>
+<div style="top:{$animatedY * 12.5}%; left: {$animatedX * 12.5}%" />
 
 <style>
   div {

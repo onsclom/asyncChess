@@ -19,9 +19,24 @@
 			case "d":
 				move(Player.ONE, {x:1,y:0})
 				break;
+
+
+			case "ArrowUp":
+				move(Player.TWO, {x:0,y:-1})
+				break;
+			case "ArrowDown":
+				move(Player.TWO, {x:0,y:1})
+				break;
+			case "ArrowLeft":
+				move(Player.TWO, {x:-1,y:0})
+				break;
+			case "ArrowRight":
+				move(Player.TWO, {x:1,y:0})
+				break;
 		}
 	}
 
+	// TODO: refactor this to be a game function
 	function move(player: Player, dir: Vector2) {
 		if (player == Player.ONE) {
 			$game.player1Cursor.x += dir.x
