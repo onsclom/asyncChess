@@ -1,8 +1,13 @@
 <script lang="ts">
-  import BlackKing from './svg_components/BlackKing.svelte'
-  export let piece: VisualPiece
+  import { PieceSVGs } from "../types";
   
-  let pieceSVG = BlackKing
+  export let piece: VisualPiece
+  $: pieceString = getPieceString(piece.isWhite, piece.type);
+  $: pieceSVG = PieceSVGs[pieceString]
+
+  function getPieceString(isWhite: boolean, pieceType: PieceTypes) {
+    return `${isWhite?"White":"Black"}${pieceType}`
+  }
 </script>
 
 <div class="pieceContainer" style="top:{12.5*piece.y}%; left:{12.5*piece.x}%">
@@ -12,7 +17,6 @@
   <div class="piece">
     <svelte:component this={pieceSVG}/>
   </div>
-
 </div>
 
 <style>
@@ -33,5 +37,4 @@
     width: 100%;
     height: 100%;
   }
-
 </style>

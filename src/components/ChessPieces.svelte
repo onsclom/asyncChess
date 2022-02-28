@@ -5,7 +5,7 @@
 
   export let pieces: VisualPiece[] = [ 
     {
-      type: PieceTypes.King,
+      type: PieceTypes.Bishop,
       isWhite: true,
       x: 0,
       y: 2,

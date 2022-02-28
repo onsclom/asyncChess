@@ -1,5 +1,14 @@
 /// <reference types="svelte" />
 
+enum PieceTypes {
+  Pawn="Pawn",
+  Rook="Rook",
+  Knight="Knight",
+  Bishop="Bishop",
+  Queen="Queen",
+  King="King"
+}
+
 interface VisualPiece {
   type: PieceTypes
   isWhite: boolean
