@@ -1,3 +1,4 @@
-// import { writeable } from 'svelte/store'
+import { writable } from 'svelte/store'
+import { AsyncChessGame } from './types'
 
-// export let game = writeable(new AsyncChessGame)
+export let game = writable(new AsyncChessGame())

@@ -1,22 +1,17 @@
 <script lang="ts">
-  import { PieceTypes } from '../types';
+  import type { PieceTypes, Piece } from '../types';
   import ChessPiece from './ChessPiece.svelte'
+  import { game } from '../stores';
+  
+  export let flipped: boolean;
   // import { PieceTypes } from '../types';
 
-  export let pieces: VisualPiece[] = [ 
-    {
-      type: PieceTypes.Bishop,
-      isWhite: true,
-      x: 0,
-      y: 2,
-      cooldown: 0
-    }
-   ]
+  export let pieces: Piece[] = $game.pieces
 </script>
 
 <div>
   {#each pieces as piece}
-    <ChessPiece {piece}/>
+    <ChessPiece {piece} {flipped}/>
   {/each}
 </div>
 

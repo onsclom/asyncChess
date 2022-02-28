@@ -9,9 +9,9 @@
 
 <div class="mainHolder">
   <ChessGrid/> 
-  <ChessPieces/>
-  <PremoveMarkers/>
-  <PlayerSelector/>
+  <ChessPieces {flipped}/>
+  <PremoveMarkers />
+  <PlayerSelector {flipped}/>
 </div>
 
 <style>
