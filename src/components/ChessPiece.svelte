@@ -41,7 +41,7 @@
   .cooldown {
     position: absolute;
     width: 100%;
-    background-color: red;
+    background-color: var(--cooldown-color);
   }
 
   .piece {

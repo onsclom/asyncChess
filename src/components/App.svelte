@@ -56,6 +56,27 @@
 			$game.player2Cursor.y += dir.y
 		}
 	}
+
+	const cooldownSeconds = 5;
+	function animateLoop() {
+		// get delta
+		let current = Date.now()
+		let delta = current - lastFrame
+		lastFrame = current
+
+		for (let piece of $game.pieces) {
+			if (piece && piece.cooldown) {
+				piece.cooldown -= delta/1000/cooldownSeconds
+				if (piece.cooldown < 0)
+					piece.cooldown = 0
+			}
+		}
+
+		$game=$game
+		requestAnimationFrame(animateLoop)
+	}
+	let lastFrame = Date.now()
+	animateLoop()
 </script>
 
 <main>

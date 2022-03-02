@@ -122,6 +122,7 @@ export class AsyncChessGame {
     if (pieceOnStart) {
       pieceOnStart.x = to.x
       pieceOnStart.y = to.y
+      pieceOnStart.cooldown = 1.0
     }
 
     if (player == Player.ONE)

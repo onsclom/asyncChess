@@ -3,4 +3,9 @@
 	--white-square-color: white;
 	--selected-frame: rgb(0, 199, 0);
 	--selected-background: rgba(0, 199, 0, 0.35);
+	--cooldown-color: rgba(250, 150, 150, 1)
+}
+
+html {
+	font-family: monospace;
 }
