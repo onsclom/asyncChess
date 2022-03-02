@@ -1,4 +1,6 @@
 :root {
 	--black-square-color: lightgray;
 	--white-square-color: white;
+	--selected-frame: rgb(0, 199, 0);
+	--selected-background: rgba(0, 199, 0, 0.35);
 }

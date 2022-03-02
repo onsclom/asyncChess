@@ -19,19 +19,28 @@
 			case "d":
 				move(Player.ONE, {x:1,y:0})
 				break;
-
+			case "e":
+				$game.playerSelect(Player.ONE)
+				$game=$game
+				console.log($game)
+				break;
 
 			case "ArrowUp":
-				move(Player.TWO, {x:0,y:-1})
-				break;
-			case "ArrowDown":
 				move(Player.TWO, {x:0,y:1})
 				break;
+			case "ArrowDown":
+				move(Player.TWO, {x:0,y:-1})
+				break;
 			case "ArrowLeft":
-				move(Player.TWO, {x:-1,y:0})
+				move(Player.TWO, {x:1,y:0})
 				break;
 			case "ArrowRight":
-				move(Player.TWO, {x:1,y:0})
+				move(Player.TWO, {x:-1,y:0})
+				break;
+			case "/":
+				$game.playerSelect(Player.TWO)
+				$game=$game
+				console.log($game)
 				break;
 		}
 	}
